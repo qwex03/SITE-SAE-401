@@ -99,6 +99,12 @@ include("www/header.inc.php");
                                 return stock.store_id == storeId;
                             });
                         }
+                        if (selectedForm == 'Stores') {
+                            response = response.filter(function(store) {
+                                $('#deleteButtonContainer').show();
+                                return store.id == storeId;
+                            });
+                        }
                         // Populate dynamic select with the filtered data
                         populateDynamicSelect(response);
                         // Log the number of options in the select element
